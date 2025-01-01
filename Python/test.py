@@ -1,37 +1,25 @@
+# 01
+name = input('Enter Your Name :')
+age = input('Enter Your Age :')
 
-# i = 0
-# while True:
+print(f'Hello {name}, you are {age} years old.')
 
-#     n = int(input('Enter a number : '))
-#     if n & 1 :
-#         print('Number is Odd !')
-#     else:
-#         print('Number is Even !')
-#     i = i+1
-#     if i == 10:
-#         break
+# 02
 
+n1 = int(input('Enter Number 1 : '))
+n2 = int(input('Enter Number 2 : '))
 
+print(f'Addition        : {n1} + {n2} = {n1+n2}')
+print(f'Subtraction     : {n1} - {n2} = {n1-n2}')
+print(f'Multiplication  : {n1} * {n2} = {n1*n2}')
+if (n2 == 0): print('Cant divide by 0')
+else: print(f'Division        : {n1} / {n2} = {n1/n2}')
 
-sum = 10 +\
-20-\
-4
-print(f'{sum} is Faltu""')
+# 03
 
-
-a = '''flkighgfkhgkgfjhgfkhfkhgf
-ghhgjgfd
-hg
-lgkhf
-lgkh
-gkhdfg
-khf''""""
-gkhdflgkhdf
-glkdhfg
-dhfgl]
-hdfg
-ldhf
-
-
-'''
-print(a)
+n = int(input('Enter a number : '))
+if(n%2==1): print('Odd !!')
+else: print('Even !!')
+if(n%3 == 0 and n%5 == 0):
+    print('Diviaible by 3 and 5 !!')
+else: print('Not Diviaible by 3 and 5 !!')

@@ -32,10 +32,10 @@
 
 pw = float(input('Enter Weight : '))
 
-if(pw <= 0.1): print(1)
-elif(pw <= 5): print(5)
-elif(pw <= 10): print(10)
-elif(pw <= 15): print(15)
-elif(pw <= 20): print(20)
+if(pw <= 0.1): print(1,'$')
+elif(pw <= 5): print(5,'$')
+elif(pw <= 10): print(10,'$')
+elif(pw <= 15): print(15,'$')
+elif(pw <= 20): print(20,'$')
 else: print('Not supported !!')
 

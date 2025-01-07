@@ -117,9 +117,9 @@ for i in range(n):
     list.append(number)
 
 t = tuple(list)
-print(id(t))
+print(t)
 
 print(t[0], t[n-1])
 list.reverse()
 t = tuple(list)
-print(id(t))
+print(t)

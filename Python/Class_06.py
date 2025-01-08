@@ -39,19 +39,75 @@
 
 # print(find_longest_word('The quick brown fox jumps over the lazy dog'))
 
-def find_longest_word(sentence: str):
-    words = sentence.split()
+# def find_longest_word(sentence: str):
+#     words = sentence.split()
     
-    longest_word = ""
-    max_length = 0
+#     longest_word = ""
+#     max_length = 0
     
-    for word in words:
-        if len(word) > max_length:
-            longest_word = word
-            max_length = len(word)
+#     for word in words:
+#         if len(word) > max_length:
+#             longest_word = word
+#             max_length = len(word)
     
-    return longest_word, max_length
+#     return longest_word, max_length
 
-sentence = "The quick brown fox jumps over the lazy dog"
-longest_word, length = find_longest_word(sentence)
-print(f"The longest word = {longest_word} and length =  {length}")
+# sentence = "The quick brown fox jumps over the lazy dog"
+# longest_word, length = find_longest_word(sentence)
+# print(f"The longest word = {longest_word} and length =  {length}")
+
+# def func(x, y=9):
+#     print(x,y)
+#     pass
+# func(7,3)
+
+
+# def func(a,b):
+#     print(a,b)
+
+# func(b=2,a=9)
+
+
+# def num(*ar):
+#     for i in ar:
+#         print(i)
+
+# num(1,2,3,4,5)
+# num(1,4,5)
+
+# num(1,2,3,5)
+
+
+# Lambda
+
+# mul = lambda x,y : x*y
+# print(mul(5,3))
+
+# mul = (lambda x,y : x*y)(3,7)
+# print(mul)
+
+# def fibo(n):
+#     if n == 1: return 0
+#     if n == 2: return 1
+#     return fibo(n-1) + fibo(n-2)
+
+# n = int(input('Enter N : '))
+# for i in range(1,n+1):
+#     print(fibo(i), end=' ')
+
+# Task 01
+
+def is_palindrom(s):
+    s = 
+    s2 = list(s)
+    s2.reverse()
+    s1 = s2
+    print(s1,s2)
+    if s2 == s1:
+        print('palindrom !!')
+    else:
+        print(' not palindrom !!')
+
+is_palindrom('maam4')
+
+

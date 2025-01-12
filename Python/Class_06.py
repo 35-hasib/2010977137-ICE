@@ -99,11 +99,10 @@
 
 def is_palindrom(s):
     s2 = s[::-1]
-    print(s, s2)  
     if s == s2:
         print('palindrome !!')
     else:
         print('not palindrome !!')
 
-is_palindrom('maam4')
+is_palindrom('maam')
 

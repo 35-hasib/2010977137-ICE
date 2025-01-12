@@ -32,5 +32,8 @@ file = open('test.txt', 'r')
 # print(line)
 for i in range(5):
     line = file.readline()
-    print(line, end='')
+    if(line == 'hasib\n'):
+        print(5)
+    else:
+        print(0)
 file.close()

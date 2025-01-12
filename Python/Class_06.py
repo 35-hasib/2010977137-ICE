@@ -98,16 +98,12 @@
 # Task 01
 
 def is_palindrom(s):
-    s = 
-    s2 = list(s)
-    s2.reverse()
-    s1 = s2
-    print(s1,s2)
-    if s2 == s1:
-        print('palindrom !!')
+    s2 = s[::-1]
+    print(s, s2)  
+    if s == s2:
+        print('palindrome !!')
     else:
-        print(' not palindrom !!')
+        print('not palindrome !!')
 
 is_palindrom('maam4')
-
 

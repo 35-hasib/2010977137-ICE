@@ -23,5 +23,7 @@ select * from titles where royalty = (select avg(royalty)  from titles)
 
 -- Task 03
 
-
+select au_lname, royalty 
+from authors join titleauthor on authors.au_id = titleauthor.au_id join titles on titles.title_id = titleauthor.title_id
+where royalty = (select max(royalty) from titles)
  

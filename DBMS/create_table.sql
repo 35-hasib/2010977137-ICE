@@ -6,11 +6,19 @@ CREATE TABLE CustomerAndSuppliers (
     cust_fname varCHAR(15) NOT NULL,
     cust_lname VARCHAR(15),
     cust_address TEXT,
-    cust_telno CHAR(12) CHECK (cust_telno LIKE '[0-9][0-9][0-9][-][0-9][0-9[0-9][0-9][0-9][0-9][0-9][0-9]'),
+    cust_telno CHAR(12) CHECK (cust_telno LIKE '[0-9][0-9][0-9][-][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
     cust_city CHAR(12) DEFAULT 'Rajshahi',
     sales_amnt MONEY CHECK (sales_amnt >= 0),
     proc_amnt MONEY CHECK (proc_amnt >= 0)
 );
+--drop table CustomerAndSuppliers
+-- Insert random values into CustomerAndSuppliers table
+INSERT INTO CustomerAndSuppliers (cust_id, cust_fname, cust_lname, cust_address, cust_telno, sales_amnt, proc_amnt)
+VALUES 
+    ('C00001', 'John', 'Doe', '123 Main St', '012-34567890', 10000.50, 5000.25);
+
+-- Verify the data
+SELECT * FROM CustomerAndSuppliers;
 
 
 -- Creating the Item table

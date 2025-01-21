@@ -41,7 +41,7 @@ BEGIN
     WHERE item_category = @CategoryName;
 
     -- Loop until the current average price exceeds the desired value
-    WHILE @CurrentAvgPrice <= @DesiredAvgPrice
+    WHILE @CurrentAvgPrice >= @DesiredAvgPrice
     BEGIN
         -- Update the price of items under the category by 10%
         UPDATE Item

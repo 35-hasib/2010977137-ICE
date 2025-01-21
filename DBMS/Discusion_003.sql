@@ -27,6 +27,7 @@ exec GetItemsCheaperThan @CategoryName = 'Software', @Price = 100
 
 
 -- Task 03
+
 CREATE PROCEDURE UpdatePricesToTarget
     @CategoryName VARCHAR(50),
     @DesiredAvgPrice FLOAT

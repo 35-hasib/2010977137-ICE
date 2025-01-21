@@ -33,8 +33,8 @@ CREATE TABLE Item (
 --drop table Item
 insert into Item 
 values
-('P00001', 'watch', 'Electrical', 66.0, 5,'2025-01-01'),
-('P00002', 'windows', 'Software', 61.8, 4, '2025-02-02');
+('P00003', 'watch', 'Electrical', 66.0, 5,'2025-01-01'),
+('P00004', 'windows', 'Software', 61.8, 4, '2025-02-02');
 
 select * from Item
 

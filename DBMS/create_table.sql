@@ -2,7 +2,7 @@
 
 -- Creating table
 CREATE TABLE CustomerAndSuppliers (
-    cust_id varCHAR(6) PRIMARY KEY CHECK (cust_id LIKE '[CS][0-9][0-9][0-9][0-9][0-9]'),
+    cust_id CHAR(6) PRIMARY KEY CHECK (cust_id LIKE '[CS][0-9][0-9][0-9][0-9][0-9]'),
     cust_fname varCHAR(15) NOT NULL,
     cust_lname VARCHAR(15),
     cust_address TEXT,
@@ -30,16 +30,30 @@ CREATE TABLE Item (
     item_qty INT CHECK (item_qty >= 0),
     item_last_sold DATE DEFAULT GETDATE()
 );
+--drop table Item
+insert into Item 
+values
+('P00001', 'watch', 'Electrical', 66.0, 5,'2025-01-01'),
+('P00002', 'windows', 'Software', 61.8, 4, '2025-02-02');
+
+select * from Item
 
 -- Creating the Transactions table
 CREATE TABLE Transactions (
     tran_id CHAR(10) PRIMARY KEY CHECK (tran_id LIKE 'T[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
-    item_id CHAR(6) FOREIGN KEY REFERENCES Item(item_id),
-    cust_id CHAR(6), -- Assuming there's a Customer table; reference can be added if needed
+    item_id CHAR(6) NOT NULL,
+    cust_id CHAR(6) NOT NULL,
     tran_type CHAR(1) CHECK (tran_type IN ('S', 'O')),
-    tran_quantity INT CHECK (tran_quantity > 0),
-    tran_date DATETIME DEFAULT GETDATE()
+    tran_quantity INT NOT NULL CHECK (tran_quantity > 0),
+    tran_date DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (item_id) REFERENCES Item(item_id),
+    FOREIGN KEY (cust_id) REFERENCES CustomerAndSuppliers(cust_id)
 );
+--drop table Transactions
+
+INSERT INTO Transactions (tran_id, item_id, cust_id, tran_type, tran_quantity, tran_date) VALUES
+('T000000001', 'P00001', 'C00001', 'S', 20, '2025-01-18');
+
 
 select * from CustomerAndSuppliers
 select * from Item

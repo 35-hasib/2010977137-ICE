@@ -3,7 +3,7 @@
 -- Store procedure
 --------------------------------------------------------------------
 go
-alter proc insert_treasection
+alter proc insert_treasection  -- If you not create the use create in alter possition 
 @Transaction_ID CHAR(4),
 @Transaction_date DATE,
 @Customer_ID CHAR(4),
@@ -43,7 +43,7 @@ exec insert_treasection
 -------------------------------------------------------------------------------------------
 
 go
-alter trigger update_transection on Transactions after insert
+alter trigger update_transection on Transactions after insert   -- If you not create the use create in alter possition 
 as
 begin
 	select * from inserted

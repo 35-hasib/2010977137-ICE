@@ -12,6 +12,7 @@ alter proc insert_treasection
 as
 begin
 	declare @Unit_Price money, @Quantity_in_hand int, @amount money;
+
 	select @Unit_Price = Unit_Price, @Quantity_in_hand = Quantity_in_hand from Products
 	where @Product_ID = Product_ID
 
@@ -31,7 +32,7 @@ end
 ------------------------------------------------------------------------------------------
 go
 exec insert_treasection
-	@Transaction_ID = 'T016',
+	@Transaction_ID = 'T019',
     @Transaction_date = '2025-01-21',
     @Customer_ID = 'C002',
     @Product_ID = 'P001',
@@ -64,3 +65,19 @@ begin
 	print 'Data inserted !!'
 
 end
+
+---------------------------------------------------------------------------------------
+-- If i delect a transection then 
+---------------------------------------------------------------------------------------
+
+go
+alter trigger update_transection1 on Transactions after delete
+as
+begin
+	print 'Delete one Transection !!'
+	select * from deleted
+end
+
+select * from Transactions
+delete from Transactions where Transaction_ID = 'T002'
+

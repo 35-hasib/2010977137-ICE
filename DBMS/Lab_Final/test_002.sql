@@ -31,11 +31,11 @@ end
 ------------------------------------------------------------------------------------------
 go
 exec insert_treasection
-	@Transaction_ID = 'T015',
+	@Transaction_ID = 'T016',
     @Transaction_date = '2025-01-21',
     @Customer_ID = 'C002',
     @Product_ID = 'P001',
-    @Quantity_sold = 100;
+    @Quantity_sold = 10;
 
 -------------------------------------------------------------------------------------------
 -- Trigger
@@ -45,7 +45,7 @@ go
 alter trigger update_transection on Transactions after insert
 as
 begin
-	
+	select * from inserted
 	declare @Transaction_ID varchar(4), @Customer_ID varchar(4), @Product_ID varchar(4), @Quantity_sold int;
 
 	select @Transaction_ID=Transaction_ID, @Customer_ID=Customer_ID, @Product_ID=Product_ID, @Quantity_sold=Quantity_sold from inserted
